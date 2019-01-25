@@ -1,18 +1,26 @@
+<!-- this is our component -->
+<!-- it should contain exactly one root element -->
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div>
+		<p>Another server status {{status}}</p>
+		<hr>
+		<button @click="changeStatus">ChangeStatus</button>
+	</div>
+	
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
-};
+	data: function(){
+		return {
+			status: 'Good'
+		}
+	},
+	methods:{
+		// ES6 syntax
+		changeStatus(){
+			this.status = 'Even better!'
+		}
+	}
+}
 </script>
