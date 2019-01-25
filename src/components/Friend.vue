@@ -4,7 +4,7 @@
 		<hr>
 		<button @click="changeStatus">ChangeStatus</button>
 	</div>
-	
+
 </template>
 
 <script>
