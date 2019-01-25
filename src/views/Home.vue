@@ -2,25 +2,16 @@
 <!-- it should contain exactly one root element -->
 <template>
 	<div>
-		<p>Another server status {{status}}</p>
-		<hr>
-		<button @click="changeStatus">ChangeStatus</button>
+		<friends v-for="f in 5"></friends>
 	</div>
-	
+
 </template>
 
 <script>
+	import Friend from "../components/Friend.vue";
 export default {
-	data: function(){
-		return {
-			status: 'Good'
-		}
-	},
-	methods:{
-		// ES6 syntax
-		changeStatus(){
-			this.status = 'Even better!'
-		}
+	components:{
+		'friends': Friend
 	}
 }
 </script>
