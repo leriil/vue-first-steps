@@ -4,6 +4,7 @@
 		<p>Many Details</p>
 		<p>User Name {{name}} </p>
 		<p>User reversed Name {{reverseName()}} </p>
+		<button class="btn btn-primary" @click="resetName()">Reset name</button>
 	</div>
 </template>
 
@@ -28,12 +29,20 @@ export default {
 		// 	}
 		// 	}
 		}
-	},
+	,
 	// the property can be used in methods
 	methods: {
 		reverseName(){
 			return this.name.split("").reverse().join("");
+		},
+		// this method passes the new value to the parent component
+
+		resetName(){
+			this.name='Aurora';
+			// event name, argument
+			this.$emit('myEvent', this.name);
 		}
+
 	}
 }
 </script>
