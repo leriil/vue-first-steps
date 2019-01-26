@@ -1,10 +1,8 @@
 <!-- only one root element allowed! -->
 <template>
-  <div class="container">
+  <div class="container component">
     <div class="row">
-      <div class="col-xs-12">
         <app-user></app-user>
-      </div>
     </div>
   </div>
 </template>
@@ -23,4 +21,10 @@
 div.component {
   border: 1px solid black;
 }
+div.block {
+    
+    margin-left: 10px;
+    margin-bottom: 10px; 
+    margin-right: 10px;
+  }
 </style>

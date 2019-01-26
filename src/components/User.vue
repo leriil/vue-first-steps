@@ -1,17 +1,15 @@
 <template>
-	<div class="component">
+	<div class="container">
 		<h1>The user component</h1>
 		<p>You are an awesome User!</p>
-		<button @click="changeName">Change my name</button>
+		<button class="btn btn-success" @click="changeName">Change my name</button>
 		<hr>
 		<div class="row">
-			<div class="col-xs-12 col-sm-6">
-				<!-- : makes the property dynamic -->
-			<app-user-detail :name="name"></app-user-detail>
-		</div>
-		<div class="col-xs-12 col-sm-6">
+			<div class="col-sm-3"></div>
+			<!-- single file template supports case sensitive attributes, so we can use myName here as well -->
+			<app-user-detail ></app-user-detail>
 			<app-user-edit></app-user-edit>
-		</div>
+			<div class="col-sm-3"></div>
 		</div>
 		
 	</div>
@@ -40,6 +38,7 @@
 </script>
 <style scoped>
 	div {
-		background-color: lightblue; 
+		background-color: lightblue;
+		text-align: center; 
 	}
 </style>
