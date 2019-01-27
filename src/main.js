@@ -9,11 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
-// Vue.component ('another-status', Home);
 
-// this bus is used for siblings communication
-// we can write data and methods inside this Vue instance and use them whenever we import this busEvent
-export const eventBus = new Vue();
 
 new Vue({
   router,
