@@ -1,6 +1,14 @@
 <template>
   <div class="container">
     <div class="row">
+       <button @click="selectedComponent='appQuote'">Quote</button>
+      <button @click="selectedComponent='appAuthor'">Author</button>
+      <button @click="selectedComponent='appBook'">Book</button>
+      <!-- here we define the component to show -->
+      <!-- the component is destroyed each time it's closed -->
+      <component :is="selectedComponent">
+        <p>Default Content</p>
+      </component>
         <app-quote>
           <!-- we can pass html code to the child -->
          <!--  <h1>The Quote</h1> -->
@@ -17,14 +25,19 @@
 <script>
 
  import Quote from './components/Quote.vue';
+ import Author from './components/Author.vue';
+ import Book from './components/Book.vue';
   export default {
     data: function(){
       return{
-        quoteTitle: 'The Quote'
+        quoteTitle: 'The Quote',
+        selectedComponent: 'appQuote'
       }
     },
   components:{
-    appQuote: Quote
+    appQuote: Quote,
+    appAuthor: Author,
+    appBook: Book
   }
 
 }
