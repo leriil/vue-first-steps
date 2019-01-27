@@ -2,8 +2,9 @@
 	<div class="col-sm-3 block component user">
 		<h3>User Details</h3>
 		<p>Many Details</p>
-		<p>User Name {{name}} </p>
-		<p>User reversed Name {{reverseName()}} </p>
+		<p>User Name: {{name}} </p>
+		<p>User Age: {{userAge}} </p>
+		<p>User reversed Name: {{reverseName()}} </p>
 		<button class="btn btn-primary" @click="resetName()">Reset name</button>
 		<!-- executing a parent function (a callback) -->
 		<button class="btn btn-danger" @click="parentFn()">Reset name</button>
@@ -22,7 +23,8 @@ export default {
 		// required: true
 		default: 'Max'},
 		// a parent function
-		parentFn: Function
+		parentFn: Function,
+		userAge: Number
 		// in case type is Object
 		// name:{
 		// 	type: Object,

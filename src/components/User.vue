@@ -10,8 +10,8 @@
 			<!-- single file template supports case sensitive attributes, so we can use myName here as well -->
 			<!-- listen to the event and get its argument-->
 			<!-- we can pass functions as a prop -->
-			<app-user-detail :name="name" :parentFn="parentResetName" @myEvent="name = $event"></app-user-detail>
-			<app-user-edit></app-user-edit>
+			<app-user-detail :name="name" :userAge="age" :parentFn="parentResetName" @myEvent="name = $event"></app-user-detail>
+			<app-user-edit :userAge="age" @ageEdited="age=$event"></app-user-edit>
 			<div class="col-sm-3"></div>
 		</div>
 		
@@ -25,7 +25,8 @@
 	export default {
 		data: function(){
 			return {
-				name:'Linda'
+				name:'Linda',
+				age: 30
 			};
 		},
 		methods: {
