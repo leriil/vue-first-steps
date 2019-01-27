@@ -8,12 +8,16 @@
 </template>
 
 <script>
+	
+	import {eventBus} from '../main';
 export default {
  props:['userAge'],
  methods:{
  	editAge(){
  		this.userAge = 25;
- 		this.$emit('ageEdited', this.userAge);
+ 		// this.$emit('ageEdited', this.userAge);
+ 		// this will only pass data to the sibling which is listening to the event, not the parent
+ 		eventBus.$emit('ageEdited', this.userAge);
  	}
  }
   }

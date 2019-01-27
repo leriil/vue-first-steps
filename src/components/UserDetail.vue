@@ -12,6 +12,7 @@
 </template>
 
 <script>
+	import {eventBus} from '../main';
 export default {
 	// to receive data from parent
 	// props:['name'],
@@ -49,6 +50,11 @@ export default {
 			this.$emit('myEvent', this.name);
 		}
 
+	},
+	created(){
+		eventBus.$on('ageEdited', (age)=> {
+			this.userAge = age;
+		})
 	}
 }
 </script>

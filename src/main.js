@@ -11,8 +11,12 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 // Vue.component ('another-status', Home);
 
+// this bus is used for siblings communication
+export const eventBus = new Vue();
+
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount("#app");
+
