@@ -8,6 +8,13 @@
 		// this will be printed each time the component is closed
 		destroyed(){
 			console.log('Destroyed');
+		},
+		// lifecycle hooks we can use to control our components
+		deactivated(){
+			console.log('Deactivated');
+		},
+		activated(){
+			console.log('Activated');
 		}
 	}
 	

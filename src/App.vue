@@ -6,9 +6,13 @@
       <button @click="selectedComponent='appBook'">Book</button>
       <!-- here we define the component to show -->
       <!-- the component is destroyed each time it's closed -->
-      <component :is="selectedComponent">
+      <!-- but if we wrap it in keep-alive, it is not destroyed -->
+      <keep-alive>
+        <component :is="selectedComponent">
         <p>Default Content</p>
       </component>
+      </keep-alive>
+      
         <app-quote>
           <!-- we can pass html code to the child -->
          <!--  <h1>The Quote</h1> -->
