@@ -1,8 +1,12 @@
 <template>
 	<div class=" col-md-12 quote">
 		<!-- a reserved word for recieving html code -->
-		<slot></slot>
+		<slot name="title"></slot>
+		<!-- the slot displays the subtitle if nothing is passed, when the slot with this name is passed, it replaces the default content -->
+		<span style="color: #ccc"><slot name="subtitle">the subtitle</slot></span>
+		<slot name="content"></slot>
 		<!-- <p>A wonderful quote</p> -->
+		<slot></slot>
 	</div>
 </template>
 <script>
@@ -16,9 +20,6 @@
 	padding: 30px;
 	margin: 30px auto;
 	text-align: center;
-}
-h1{
-  color: red;
 }
 	
 

@@ -3,9 +3,12 @@
     <div class="row">
         <app-quote>
           <!-- we can pass html code to the child -->
-          <h1>The Quote</h1>
-          <h2>{{quoteTitle}}</h2>
-          <p>A beautiful quote</p>
+         <!--  <h1>The Quote</h1> -->
+         <!-- we can use named slots to pass several html elements separately -->
+          <h2 slot="title">{{quoteTitle}}</h2>
+          <p slot="content">A beautiful quote</p>
+          <!-- an unnamed slot is considered a default slot -->
+          <p>Here goes unnamed slot</p>
         </app-quote>
     </div>
   </div>
@@ -28,5 +31,8 @@
 </script>
 
 <style>
+h1 {
+  color: red;
+}
 
 </style>
