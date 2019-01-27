@@ -5,6 +5,8 @@
 		<p>User Name {{name}} </p>
 		<p>User reversed Name {{reverseName()}} </p>
 		<button class="btn btn-primary" @click="resetName()">Reset name</button>
+		<!-- executing a parent function (a callback) -->
+		<button class="btn btn-danger" @click="parentFn()">Reset name</button>
 	</div>
 </template>
 
@@ -18,7 +20,9 @@ export default {
 			type: String,
 		// the component won't run without the property
 		// required: true
-		default: 'Max'}
+		default: 'Max'},
+		// a parent function
+		parentFn: Function
 		// in case type is Object
 		// name:{
 		// 	type: Object,
@@ -36,7 +40,7 @@ export default {
 			return this.name.split("").reverse().join("");
 		},
 		// this method passes the new value to the parent component
-
+		// executing a custom event
 		resetName(){
 			this.name='Aurora';
 			// event name, argument

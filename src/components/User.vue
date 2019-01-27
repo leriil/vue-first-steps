@@ -3,13 +3,14 @@
 		<h1>The user component</h1>
 		<p>You are an awesome User!</p>
 		<button class="btn btn-success" @click="changeName">Change my name</button>
-		<p> Name is{{ name }}</p>
+		<p> Name is: {{ name }}</p>
 		<hr>
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<!-- single file template supports case sensitive attributes, so we can use myName here as well -->
 			<!-- listen to the event and get its argument-->
-			<app-user-detail :name="name" @myEvent="name = $event"></app-user-detail>
+			<!-- we can pass functions as a prop -->
+			<app-user-detail :name="name" :parentFn="parentResetName" @myEvent="name = $event"></app-user-detail>
 			<app-user-edit></app-user-edit>
 			<div class="col-sm-3"></div>
 		</div>
@@ -30,6 +31,9 @@
 		methods: {
 			changeName(){
 				this.name = 'Anna';
+			},
+			parentResetName(){
+				this.name = 'Einstein';
 			}
 		},
 		components: {
