@@ -44,30 +44,36 @@
         <div class="row">
              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                  <div class="form-group">
+                    <!-- add the values of checkboxes to thesame  array -->
                      <label for="sendmail">
                          <input type="checkbox"
                                 id="sendmail"
-                                value="SendMail">Send mail      
+                                value="SendMail"
+                                v-model="sendMail"> Send mail       
                      </label>
                      <label for="sendInfomail">
                          <input type="checkbox"
                                 id="sendInfomail"
-                                value="sendInfoMail">Send Infomail      
+                                value="sendInfoMail"
+                                v-model="sendMail"> Send Infomail       
                      </label>
                  </div>
              </div>
         </div>
         <div class="row">
              <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+                <!-- v-model recognizes that the radiobuttons are in the same group because of v-model, the value selected is automatically stored -->
                  <label for="male">
                      <input type="radio"
                             id="male"
-                            value="Male">Male
+                            value="Male"
+                            v-model="gender">  Male 
                  </label>
                  <label for="female">
                      <input type="radio"
                             id="female"
-                            value="Female">Female
+                            value="Female"
+                            v-model="gender">  Female 
                  </label>
              </div>
         </div>
@@ -75,8 +81,11 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
                 <label for="priority">Priority</label>
                 <select id="priority"
-                        class="form-control">
-                        <option></option></select>
+                        class="form-control"
+                        v-model="selectedPriority">
+                        <option 
+                        v-for="p in priorities" >{{p}}</option>
+                 </select>
             </div>
         </div>
         <hr>
@@ -103,10 +112,10 @@
                      <p style="white-space: pre">Message: {{message}} </p>
                      <p><strong>Send mail? </strong></p>
                      <ul>
-                         <li></li>
+                         <li v-for="s in sendMail">{{s}}</li>
                      </ul>
-                     <p>Gender: </p>
-                     <p>Priority: </p>
+                     <p>Gender: {{gender}}</p>
+                     <p>Priority: {{selectedPriority}}</p>
                  </div>
              </div>
          </div>
@@ -126,7 +135,11 @@
                 password:'',
                 age:27
             }, 
-            message:'A new text'
+            message:'A new text',
+            sendMail:[],
+            gender:'Male',
+            priorities:['High','Medium','Low'],
+            selectedPriority:'High'
         }
     }
 }
