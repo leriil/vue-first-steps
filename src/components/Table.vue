@@ -24,8 +24,8 @@
     :selectable="true"
   >
    <template slot-scope="scope" slot="actionCommon">
-      <button @click="edit(scope.index, scope.row)">Edit</button>
-      <button @click="del(scope.index, scope.row)">Delete</button>
+      <button class="btn btn-light" @click="edit(scope.index, scope.row)">Edit</button>
+      <button class="btn btn-light" @click="del(scope.index, scope.row)">Delete</button>
     </template>
   </vue-virtual-table>
   </div>
@@ -45,7 +45,8 @@ export default {
       // tableWidth: 500,
       tableConfig: [
       {prop: 'user', name: "User", searchable: true},
-      {prop: 'age', name: "Age", numberFilter: true}
+      {prop: 'age', name: "Age", numberFilter: true},
+      {prop: '_action', name: 'Action', actionName: 'actionCommon'}
     ],
     tableData: [
       {user: 'a1', age: 20},
